@@ -29,7 +29,7 @@ You can:
 - Or download the file and reference it for repeatable use
 
 Example pattern:
-`curl $(cat performance-timing.txt) https://example.com`
+`curl -s -o /dev/null -w "$(cat performance-timing.txt)" https://example.com`
 
 Adjust as needed for your shell and environment.
 

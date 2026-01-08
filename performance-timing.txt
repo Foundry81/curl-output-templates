@@ -1,7 +1,3 @@
-# Performance Timing Breakdown
-# Purpose: Identify where time is spent during an HTTP(S) request
-
-curl -s -o /dev/null -w '
 Request Timing Breakdown
 ------------------------
     DNS lookup:        %{time_namelookup}s
@@ -10,4 +6,4 @@ Request Timing Breakdown
     Server response:   %{time_starttransfer}s
                        --------------------
     Total time:        %{time_total}s
-'
+
