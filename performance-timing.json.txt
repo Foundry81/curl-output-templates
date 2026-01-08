@@ -1,0 +1,8 @@
+{
+    "dns_lookup":      "%{time_namelookup}s",
+    "tcp_connect":     "%{time_connect}s",
+    "tls_handshake":   "%{time_appconnect}s",
+    "server_response": "%{time_starttransfer}s",
+    "total_time:"      "%{time_total}s"
+}
+\n

@@ -1,0 +1,8 @@
+{
+    "http_status":        %{http_code},
+    "content_type":       "%{content_type}",
+    "header_size":        "%{size_header} bytes",
+    "response_size":      "%{size_download} bytes",
+    "time_to_first_byte": "%{time_starttransfer}s"
+}
+\n

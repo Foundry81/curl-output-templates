@@ -1,0 +1,6 @@
+{
+    "cert_verify":    "%{ssl_verify_result}",
+    "connect_time":   "%{time_connect}s",
+    "tls_ handshake": "%{time_appconnect}s"
+}
+\n

@@ -1,7 +1,5 @@
 TLS Diagnostics
 ---------------
-    TLS version:       %{ssl_version}
-    Cipher suite:      %{ssl_cipher}
     Cert verify:       %{ssl_verify_result}
     Connect time:      %{time_connect}s
     TLS handshake:     %{time_appconnect}s

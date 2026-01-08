@@ -1,0 +1,8 @@
+{
+    "redirect_count": %{num_redirects}",
+    "redirect_time":  "%{time_redirect}s",
+    "final_url":      "%{url_effective}",
+    "total_time":     "%{time_total}s"
+}
+\n
+
