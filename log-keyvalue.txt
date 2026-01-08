@@ -1,0 +1,11 @@
+# Log-Friendly Output
+# Purpose: Produce consistent, single-line output for repeated collection
+
+curl -s -o /dev/null -w '
+dns=%{time_namelookup} \
+connect=%{time_connect} \
+tls=%{time_appconnect} \
+ttfb=%{time_starttransfer} \
+total=%{time_total} \
+status=%{http_code}
+'

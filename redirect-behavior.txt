@@ -1,0 +1,11 @@
+# Redirect Behavior
+# Purpose: Understand request flow across redirects and front-door infrastructure
+
+curl -s -o /dev/null -w '
+Redirect Behavior
+-----------------
+    Redirect count:    %{num_redirects}
+    Redirect time:     %{time_redirect}s
+    Final URL:         %{url_effective}
+    Total time:        %{time_total}s
+'

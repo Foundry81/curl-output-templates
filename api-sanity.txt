@@ -1,0 +1,12 @@
+# API Response Sanity Check
+# Purpose: Validate status, content type, and basic response characteristics
+
+curl -s -o /dev/null -w '
+API Response Check
+------------------
+    HTTP status:       %{http_code}
+    Content type:      %{content_type}
+    Header size:       %{size_header} bytes
+    Response size:     %{size_download} bytes
+    Time to first byte:%{time_starttransfer}s
+'
