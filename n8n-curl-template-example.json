@@ -1,0 +1,145 @@
+{
+  "name": "Curl Template Example",
+  "nodes": [
+    {
+      "parameters": {
+        "formTitle": "Connection Test",
+        "formFields": {
+          "values": [
+            {
+              "fieldLabel": "host",
+              "placeholder": "https://example.com",
+              "requiredField": true
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.formTrigger",
+      "typeVersion": 2.3,
+      "position": [
+        -96,
+        -224
+      ],
+      "id": "68408da4-6023-47bf-b9ea-ab7b1544a504",
+      "name": "On form submission",
+      "webhookId": "ba94edd6-d79a-4d88-991b-4f588525c86b"
+    },
+    {
+      "parameters": {
+        "authentication": "privateKey",
+        "command": "=curl -s -o /dev/null -w \"$(cat /path-to/performance-timing.json.txt)\" {{ $json.host }}"
+      },
+      "type": "n8n-nodes-base.ssh",
+      "typeVersion": 1,
+      "position": [
+        128,
+        -224
+      ],
+      "id": "704010f4-c469-43cd-9aeb-4f2a1a6ed264",
+      "name": "Curl via SSH",
+      "credentials": {
+        "sshPrivateKey": {
+          "id": "",
+          "name": ""
+        }
+      }
+    },
+    {
+      "parameters": {
+        "jsCode": "let stdOut =  $input.first().json.stdout || '';\nconst parsed = JSON.parse(stdOut);\nreturn [{ json: parsed }];"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        352,
+        -224
+      ],
+      "id": "b9fb9675-1580-4666-a037-79f6fd8f01f8",
+      "name": "Parse stdout"
+    },
+    {
+      "parameters": {
+        "content": "## Curl Template Example\nAdditional information and templates are available at [GitHub](https://github.com/Foundry81/curl-output-templates)\n1. Place the Curl templates on the host you're going to run SSH commands from (can be the same as n8n)\n2. Supply a valid credential in the \"Curl via SSH\" node\n3. Edit the \"Curl via SSH\" node's SSH command to contain a correct path to a template to be used\n4. Execute the workflow to test!\n\n\n",
+        "height": 368,
+        "width": 880,
+        "color": 7
+      },
+      "type": "n8n-nodes-base.stickyNote",
+      "position": [
+        -264,
+        -432
+      ],
+      "typeVersion": 1,
+      "id": "9031a527-5310-4844-b5ac-c7a67054a5df",
+      "name": "Sticky Note"
+    }
+  ],
+  "pinData": {},
+  "connections": {
+    "On form submission": {
+      "main": [
+        [
+          {
+            "node": "Curl via SSH",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Curl via SSH": {
+      "main": [
+        [
+          {
+            "node": "Parse stdout",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "active": false,
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "versionId": "9c839b35-3372-4380-8bb0-34fa30225f60",
+  "meta": {
+    "templateCredsSetupCompleted": true,
+    "instanceId": "089593b0375f52cffd2e682594e43cdd96459883230a04bef809490471c267bb"
+  },
+  "id": "jmWTQMvZUeque7T2",
+  "tags": [
+    {
+      "name": "Foundry81",
+      "id": "a9GNtKHaAZ5s5smB",
+      "updatedAt": "2026-01-08T18:45:38.145Z",
+      "createdAt": "2026-01-08T18:45:38.145Z"
+    },
+    {
+      "name": "Curl",
+      "id": "XDH5ESABFvML08Bi",
+      "updatedAt": "2026-01-08T18:45:43.627Z",
+      "createdAt": "2026-01-08T18:45:43.627Z"
+    },
+    {
+      "name": "Example",
+      "id": "4pIHvpNfkWYuvGvd",
+      "updatedAt": "2026-01-08T18:45:44.628Z",
+      "createdAt": "2026-01-08T18:45:44.628Z"
+    },
+    {
+      "name": "SSH",
+      "id": "kAa40KcRkhV0Qkeg",
+      "updatedAt": "2026-01-08T18:45:45.848Z",
+      "createdAt": "2026-01-08T18:45:45.848Z"
+    },
+    {
+      "name": "Template",
+      "id": "OFtCRHGtmFY3xmOQ",
+      "updatedAt": "2026-01-08T18:45:50.061Z",
+      "createdAt": "2026-01-08T18:45:50.061Z"
+    }
+  ]
+}
