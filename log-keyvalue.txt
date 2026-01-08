@@ -4,4 +4,4 @@ tls=%{time_appconnect} \
 ttfb=%{time_starttransfer} \
 total=%{time_total} \
 status=%{http_code}
-
+\n

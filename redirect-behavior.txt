@@ -4,4 +4,5 @@ Redirect Behavior
     Redirect time:     %{time_redirect}s
     Final URL:         %{url_effective}
     Total time:        %{time_total}s
+\n
 

@@ -1,8 +1,8 @@
 API Response Check
 ------------------
-    HTTP status:       %{http_code}
-    Content type:      %{content_type}
-    Header size:       %{size_header} bytes
-    Response size:     %{size_download} bytes
-    Time to first byte:%{time_starttransfer}s
-
+    HTTP status:        %{http_code}
+    Content type:       %{content_type}
+    Header size:        %{size_header} bytes
+    Response size:      %{size_download} bytes
+    Time to first byte: %{time_starttransfer}s
+\n

@@ -6,4 +6,4 @@ Request Timing Breakdown
     Server response:   %{time_starttransfer}s
                        --------------------
     Total time:        %{time_total}s
-
+\n
