@@ -1,5 +1,6 @@
 # Curl Output Templates
 *Intentional output for practical troubleshooting*
+![VHS CLI Recording](https://imgur.com/a/STw7klc.gif)
 
 Curl is already a powerful tool. These templates focus on making its output clearer, more consistent, and more useful during real troubleshooting scenarios.
 
